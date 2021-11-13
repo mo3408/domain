@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>域名管理系统</title>
+		<link rel="shortcut icon" href="__CDN__/assets/img/favicon.ico"/>
+		<!-- Loading Bootstrap -->
+		<!-- <link href="__CDN__/assets/css/backend.css?v=1635842475"rel="stylesheet"> -->
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+			<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">   <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        </script>
+	</head>
+	<body>
+		<div style="text-align: center;">
+		<!-- <div class="panel panel-default panel-intro"> -->
+		    <div class="panel-body">
+		        <div id="myTabContent" class="tab-content">
+		            <div class="tab-pane fade active in" id="one">
+		                <div class="widget-body no-padding">
+		                	<h3>网站管理备份统计</h3>
+
+		                    <table id="table" class="table table-hover table-striped">
+		                    	<tr>
+		                    		<td>ID</td>
+		                    		<td align="center">项目名称</td>
+		                    		<td>商务</td>
+		                    		<td  align="center">网站</td>
+		                    		<!-- <td>数据表总数</td> -->
+		                    		<td>备份时间</td>
+		                    		<td>上次备份</td>
+		                    		<td>类型</td>
+		                    		<td>备份操作</td>
+		                    		<td>查看文件</td>
+		                    	</tr>
+		                    	{volist name="result" id="v"}
+		                    	<tr>
+		                    		<td>{$v.id}</td>
+		                    		<td align="left">{$v.project}</td>
+		                    		<td>{$v.affairs}</td>
+		                    		<td  align="left"><a href="http://{$v.domain}" target="_blank">{$v.domain}</a></td>
+		                    	<!-- 	<td>{$v.time}</td> -->
+		                    		<td>{$v.time}</td>
+		                    		<td>{$v.lasttime}</td>
+		                    		<td>{if condition="$v.dotype eq 'xwtype'"}新网{else}快帮云{/if}</td>
+		                    		<td><a href="{:url('index/import',['id'=>$v.id])}">备份数据库</a></td>
+		                    		<td><a href="{:url('index/down',['id'=>$v.id])}">查看文件</a></td>
+		                    	</tr>
+		                    	{/volist}
+		                    </table>
+		                </div>
+		            </div>
+
+		        </div>
+		    </div>
+		<!-- </div> -->
+		<a href="http://www.kbyun.com" style="text-decoration:none;">快帮云</a>
+		</div>
+		<script type="text/javascript">
+// 			alert('请勿多次备份!')
+		</script>
+	</body>
+</html>

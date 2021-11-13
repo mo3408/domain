@@ -1,0 +1,90 @@
+<form id="add-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    {:input_token()}
+
+    <div class="form-group">
+        <label for="username" class="control-label col-xs-12 col-sm-2">{:__('Project')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="project" name="row[project]" value="{$row.project|htmlentities}" data-rule="required;project" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="control-label col-xs-12 col-sm-2">{:__('Affairs')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="email" class="form-control" id="affairs" name="row[affairs]" value="{$row.affairs|htmlentities}" data-rule="required;affairs" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="control-label col-xs-12 col-sm-2">{:__('Domain')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="domain" name="row[domain]" autocomplete="off" value="{$row.domain|htmlentities}" data-rule="required" />
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Dotype')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[dotype]', ['xwtype'=>__('Xwtype'), 'kbyun'=>__('Kbyun')], $row['dotype'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="control-label col-xs-12 col-sm-2">{:__('Ftp')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="ftp" name="row[ftp]" value="{$row.ftp|htmlentities}" data-rule="required;ftp" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="control-label col-xs-12 col-sm-2">{:__('Ftpuser')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="ftpuser" name="row[ftpuser]" value="{$row.ftpuser|htmlentities}" data-rule="required;ftpuser" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="control-label col-xs-12 col-sm-2">{:__('Ftpassd')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="password" class="form-control" id="ftpassd" name="row[ftpassd]" value="{$row.ftpassd|htmlentities}" data-rule="required;ftpassd" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="control-label col-xs-12 col-sm-2">{:__('Databaset')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="databaset" name="row[databaset]" value="{$row.databaset|htmlentities}" data-rule="required;databaset" />
+        </div>
+    </div>
+        <div class="form-group">
+        <label for="password" class="control-label col-xs-12 col-sm-2">{:__('Dataname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="dataname" name="row[dataname]" value="{$row.dataname|htmlentities}" data-rule="required;dataname" />
+        </div>
+    </div>
+               <div class="form-group">
+        <label for="password" class="control-label col-xs-12 col-sm-2">{:__('Datauser')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="datauser" name="row[datauser]" value="{$row.datauser}" data-rule="required;datauser" />
+        </div>
+    </div>
+        <div class="form-group">
+        <label for="password" class="control-label col-xs-12 col-sm-2">{:__('Datapassword')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="password" class="form-control" id="datapassword" name="row[datapassword]"  value="{$row.datapassword|htmlentities}" data-rule="required;datapassword" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-birthday" class="control-label col-xs-12 col-sm-2">{:__('Time')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="time" data-rule="" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" type="text" name="row[time]" data-date-side-by-side="true" value="{$row.time|htmlentities}">
+        </div>
+    </div>
+     <div class="form-group">
+        <label for="c-birthday" class="control-label col-xs-12 col-sm-2">{:__('Lasttime')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="lasttime" data-rule="" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" type="text" name="row[lasttime]" data-date-side-by-side="true" value="{$row.lasttime}">
+        </div>
+    </div>
+    <div class="form-group hidden layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+       
+</form>
